@@ -285,12 +285,21 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
+  devMountainEmployees[0] = tyler;
+  devMountainEmployees[1] = cahlan;
+  devMountainEmployees[2] = ryan;
+  devMountainEmployees[3] = colt;
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++){
+  if (devMountainEmployees[i].name === "Cahlan"){
+    devMountainEmployees.splice(i, 1);
+    i--;
+  }
+}
 
 
 
@@ -332,6 +341,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+  var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -343,7 +353,22 @@ var user1 = {
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 };
+var user2 = {
+    name: 'Ryan Spicer',
+    email: 'rspicer@razegroup.com',
+    password: 'zomg',
+    username: 'Novu'
+};
+var user3 = {
+    name: 'Zack Spicer',
+    email: 'spicer.zack8@gmail.com',
+    password: '!!!!',
+    username: 'ZSpark'
+};
 
+user[0] = user1;
+user[1] = user2;
+user[2] = user3;
 //Your Code Here
 
 /*Now you have a very common data structure. Twitter is a good use case.
@@ -355,6 +380,13 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+  for (var i = 0; i < user.length; i++)
+  {
+    if(user[i].email === "tylermcginnis33@gmail.com")
+    {
+      user.splice(i, 1);
+    }
+  }
 
 //The activity we just did is very much how data works in 'the real world'.
 
