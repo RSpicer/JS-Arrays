@@ -108,7 +108,14 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+function finder(arr, randoNum){
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] === randoNum){
+      return true;
+    }
+  }
+  return false;
+}
 
 //Next problem
 
@@ -118,7 +125,11 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+  function reverse(str){
+    tempArray = str.split("");
+    tempArray.reverse();
+    return tempArray.join("");
+  }
 
 //Next Problem
 
@@ -141,8 +152,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+function removeItem(myGroceryList, toRemove){
+  for (var i = 0; i < myGroceryList.length; i++){
+    if(myGroceryList[i] === toRemove){
+      myGroceryList.splice(i, 1)
+      i--;
+    }
+  }
+  return myGroceryList;
+}
 
-
+function addItem(myGroceryList, toAdd){
+  myGroceryList.push(toAdd);
+  return myGroceryList;
+}
 
 //Next Problem
 
@@ -151,7 +174,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-
+function maker(){
+  var newArray = [];
+  for (i = 1; i <= 215; i++)
+    {
+      newArray.push(i);
+    }
+    return newArray;
+}
 
 
 //Next Problem
@@ -162,7 +192,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
+function addTen(numbers){
+  for (var i = 0; i < numbers.length; i++){
+    numbers[i] = (parseInt(numbers[i], 10) + 10);
+  }
+  return numbers;
+}
 
 
 //Next Problem
@@ -183,7 +218,15 @@ for(var i = 0; i < num2; i++){
 //Write a function that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function theLongest(arr1, arr2){
+  if (arr1 > arr2){
+    return arr1;
+  }
+  else
+  {
+    return arr2;
+  }
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -191,7 +234,18 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-  
+  function both(arr1, arr2){
+    var newArray = [];
+    debugger;
+    for (var i = 0; i < arr1.length; i++){
+      for (var x = 0; x < arr2.length; x++){
+        if (arr1[i] === arr2[x]){
+          newArray.push(arr1[i]);
+        }
+      }
+    }
+    return newArray;
+  }
   
   
 
